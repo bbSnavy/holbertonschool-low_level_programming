@@ -20,19 +20,6 @@ char *func(int n)
 }
 
 /**
- * abs - Absolute value
- * @v: Value
- *
- * Return: Absolute value of v
- */
-int abs(int v)
-{
-	if (v < 0)
-		return (-v);
-	return (v);
-}
-
-/**
  * main - Main function
  *
  * Return: Exit status code
@@ -44,6 +31,6 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	printf("Last digit of %d is %d and is %s\n",
-		n, abs(n % 10), func(abs(n % 10)));
+		n, n % 10, func(n % 10));
 	return (0);
 }
