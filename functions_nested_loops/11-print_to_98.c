@@ -5,7 +5,7 @@
  * print_to_98 - function
  * @n: number
  */
-void print_to_98(int n)
+void	print_to_98(int n)
 {
 	for (; n < 99; n++)
 	{
