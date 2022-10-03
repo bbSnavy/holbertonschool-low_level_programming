@@ -14,5 +14,5 @@ void	print_to_98(int n)
 			continue;
 		printf(", ");
 	}
-	_putchar('\n');
+	printf('\n');
 }
