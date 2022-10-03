@@ -1,7 +1,10 @@
 #include <stdio.h>
 
 /**
- * func - Function
+ * func - Function with horrible difficulty
+ * @x: value
+ * 
+ * Returns: number from the fibonacci sequence
  */
 long	func(long x)
 {
@@ -19,7 +22,14 @@ int	main(void)
 {
 	long	i;
 
+	setbuf(stdout, 0);
 	for (i = 0; i < 50; i++)
-		printf("%ld\n", func(i + 2));
+	{
+		printf("%ld", func(i + 2));
+		if (i == 49)
+			continue;
+		printf(", ");
+	}
+	printf("\n");
 	return (0);
 }
