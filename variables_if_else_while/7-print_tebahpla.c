@@ -11,10 +11,6 @@ int main(void)
 
 	for (c = 'z'; c >= 'a'; c--)
 	{
-		if (c == 'q')
-			continue;
-		if (c == 'e')
-			continue;
 		putchar(c);
 	}
 	putchar('\n');
