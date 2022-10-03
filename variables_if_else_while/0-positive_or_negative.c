@@ -10,6 +10,8 @@
  */
 char *func(int n)
 {
+	if (n == 0)
+		return ("zero");
 	if (n < 0)
 		return ("negative");
 	return ("positive");
