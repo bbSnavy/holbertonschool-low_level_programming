@@ -7,7 +7,6 @@
  */
 int	main(void)
 {
-	int		i;
 	long	r;
 	long	x;
 	long	y;
