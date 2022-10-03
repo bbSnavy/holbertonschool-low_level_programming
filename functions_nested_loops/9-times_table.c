@@ -14,7 +14,7 @@ void	func(int x)
 }
 
 /**
- * jack_bauer - function
+ * times_table - function
  */
 void	times_table(void)
 {
