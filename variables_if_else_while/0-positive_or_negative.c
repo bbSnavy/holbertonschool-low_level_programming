@@ -26,6 +26,6 @@ int main(void)
 	int n;
 
 	n = rand() - RAND_MAX / 2;
-	printf("%d is %s", n, func(n));
+	printf("%d is %s\n", n, func(n));
 	return (0);
 }
