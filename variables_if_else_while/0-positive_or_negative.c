@@ -1,4 +1,6 @@
+#include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 
 /**
  * func - Function
@@ -23,6 +25,7 @@ int main(void)
 {
 	int n;
 
+	n = rand() - RAND_MAX / 2;
 	printf("%d is %s", n, func(n));
 	return (0);
 }
