@@ -3,7 +3,7 @@
 /**
  * func - Function with horrible difficulty
  * @x: value
- * 
+ *
  * Returns: number from the fibonacci sequence
  */
 long	func(long x)
