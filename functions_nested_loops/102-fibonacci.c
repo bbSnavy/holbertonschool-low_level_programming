@@ -1,31 +1,25 @@
 #include <stdio.h>
 
 /**
- * func - Function with horrible difficulty
- * @x: value
- *
- * Returns: number from the fibonacci sequence
- */
-long	func(long x)
-{
-	if (x <= 1)
-		return (x);
-	return (func(x - 1) + func(x - 2));
-}
-
-/**
  * main - Main function
  *
  * Return: Exit status code
  */
 int	main(void)
 {
-	long	i;
+	int		i;
+	long	x;
+	long	y;
+	long	z;
 
-	setbuf(stdout, 0);
+	x = 0;
+	y = 1;
 	for (i = 0; i < 50; i++)
 	{
-		printf("%ld", func(i + 2));
+		z = x + y;
+		x = y;
+		y = z;
+		printf("%ld", y);
 		if (i == 49)
 			continue;
 		printf(", ");
