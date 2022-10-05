@@ -4,14 +4,18 @@
 /**
  * fizzbuzz - fizzbuzz function in recursive, because why not?
  * @n: int
- * 
+ *
  * Return: Exit status code
  */
 int	fizzbuzz(int n)
 {
 	if (n == 0)
 		return (0);
-	return (printf("%d %s\n", (101-n), &"Fizz\0Buzz\0FizzBuzz"[((101-n)%15==0)*10+((101-n)%15!=0)*((101-n)%5==0)*5])*0+fizzbuzz(n-1));
+	return (fizzbuzz(n - 1) + printf(&"\0%d"[!printf("%s",
+		&"\0Fizz\0Buzz\0\0\0FizzBuzz"[(int)((float)((n % 3
+		== 0) + 2 * (n % 5 == 0)) * (float)((n % 3 == 0) +
+		2 * (n % 5 == 0)) * 1.5f)])], n) * printf("%s",
+		&" \0\n"[(n == 100) * 2]) * 0);
 }
 
 /**
@@ -21,5 +25,5 @@ int	fizzbuzz(int n)
  */
 int	main(void)
 {
-	return fizzbuzz(100);
+	return (fizzbuzz(100));
 }
