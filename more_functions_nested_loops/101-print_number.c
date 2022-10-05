@@ -6,8 +6,6 @@
  */
 void	print_number(int n)
 {
-	int	t;
-
 	if (n < -100000)
 	{
 		print_number(-(n / -100000));
