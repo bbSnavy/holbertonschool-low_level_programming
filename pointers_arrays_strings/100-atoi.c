@@ -21,8 +21,6 @@ int	_atoi(char *s)
 	for (; s[x] && ((s[x] >= '0') && (s[x] <= '9')); x++)
 		a = a * 10 + s[x] - '0';
 	if (c == -1)
-	{
 		a = ~a + 1;
-	}
 	return (*((int *) (&a)));
 }
