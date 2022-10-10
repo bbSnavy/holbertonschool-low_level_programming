@@ -2,6 +2,7 @@
 
 /**
  * _puts - function
+ * @str: char ptr
  */
 void	_puts(char *str)
 {
