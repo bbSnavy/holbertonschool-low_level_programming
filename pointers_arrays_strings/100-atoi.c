@@ -9,9 +9,11 @@
 int	_atoi(char *s)
 {
 	unsigned int	a;
+	unsigned int	m;
 	int		c;
 	int		x;
 
+	m = -1 / 2;
 	a = 0;
 	c = 1;
 	x = 0;
@@ -20,5 +22,9 @@ int	_atoi(char *s)
 			c = -c;
 	for (; s[x] && ((s[x] >= '0') && (s[x] <= '9')); x++)
 		a = a * 10 + s[x] - '0';
-	return (c * ((int) a));
+	if (c == -1)
+	{
+		a = ~a + 1;
+	}
+	return (*((int *) (&a)));
 }
