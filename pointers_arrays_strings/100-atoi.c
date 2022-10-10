@@ -14,19 +14,11 @@ int	_atoi(char *s)
 
 	a = 0;
 	c = 1;
-	for (x = 0; s[x]; x++)
-	{
-		if (s[x] == '+')
-		{
-			c = c;
-			continue;
-		}
+	x = 0;
+	for (; s[x] && (s[x] == ' ' || s[x] == '-' || s[x] == '+'); x++)
 		if (s[x] == '-')
-		{
 			c = -c;
-			continue;
-		}
+	for (; s[x] && ((s[x] >= '0') && (s[x] <= '9')); x++)
 		a = a * 10 + s[x] - '0';
-	}
 	return (c * ((int) a));
 }
