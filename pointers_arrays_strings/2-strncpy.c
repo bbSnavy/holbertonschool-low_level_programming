@@ -1,8 +1,10 @@
 /**
  * _strncpy - function
- * @s: char ptr
+ * @dest: char ptr
+ * @src: char ptr
+ * @n: int
  *
- * Return: length of string s
+ * Return: dest
  */
 char	*_strncpy(char *dest, char *src, int n)
 {
