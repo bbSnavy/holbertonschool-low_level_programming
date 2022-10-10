@@ -12,7 +12,6 @@ int	_atoi(char *s)
 	int		c;
 	int		x;
 
-	m = -1 / 2;
 	a = 0;
 	c = 1;
 	x = 0;
