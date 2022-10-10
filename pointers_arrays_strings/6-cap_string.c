@@ -47,11 +47,6 @@ char	cap_apply(char c, int f)
 		if ((c >= 'a') && (c <= 'z'))
 			return (c - ('a' - 'A'));
 	}
-	else
-	{
-		if ((c >= 'A') && (c <= 'Z'))
-			return (c + ('a' - 'A'));
-	}
 	return (c);
 }
 
