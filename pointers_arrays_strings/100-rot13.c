@@ -7,6 +7,7 @@
 char	*rot13(char *str)
 {
 	int	x;
+	int	y;
 	char	*a;
 	char	*b;
 
