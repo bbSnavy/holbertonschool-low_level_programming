@@ -8,7 +8,7 @@
  */
 char	*_memset(char *s, char b, unsigned int n)
 {
-	int	x;
+	unsigned int	x;
 
 	if (s == 0)
 		return (0);
@@ -18,5 +18,5 @@ char	*_memset(char *s, char b, unsigned int n)
 		s[x] = b;
 		x++;
 	}
-	return (s)
+	return (s);
 }
