@@ -1,5 +1,5 @@
 /**
- * strpbrk - function
+ * _strpbrk - function
  * @s: char ptr
  * @accept: char ptr
  *
