@@ -2,7 +2,7 @@
  * ft_strlen - function
  * @str: char ptr
  *
- * return: int
+ * Return: int
  */
 int	ft_strlen(char *str)
 {
