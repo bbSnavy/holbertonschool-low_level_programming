@@ -1,5 +1,5 @@
 /**
- * _member - function
+ * _memset - function
  * @s: char ptr
  * @b: char
  * @n: unsigned int
