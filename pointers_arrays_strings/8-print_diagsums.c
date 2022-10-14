@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * print_diagsums
+ * print_diagsums - function
  * @a: int ptr
  * @size: int
  */
