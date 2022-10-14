@@ -1,19 +1,23 @@
 #include <stdio.h>
 
+/**
+ * print_diagsums
+ * @a: int ptr
+ * @size: int
+ */
 void	print_diagsums(int *a, int size)
 {
-	int	**m;
 	int	i;
-	int	x;
-	int	y;
+	int	rx;
+	int	ry;
 
-	m = (int **) a;
-	x = 0;
-	y = 0;
+	rx = 0;
+	ry = 0;
 	for (i = 0; i < size; i++)
 	{
-		x += m[i][i];
-		y += m[size - 1 - i][size - 1 - i];
+		rx += a[(size + 1) * i];
+		ry += a[(size - 1) * (i + 1)];
 	}
-	printf("%d, %d\n", x, y);
+	printf("%d, %d\n", rx, ry);
 }
+
