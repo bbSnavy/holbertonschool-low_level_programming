@@ -32,7 +32,7 @@ void	ft_putnbr(long n)
 int	main(int argc, char **argv)
 {
 	(void) argv;
-	ft_putnbr((long) argc);
+	ft_putnbr((long) (argc - 1));
 	_putchar('\n');
 	return (0);
 }
