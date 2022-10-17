@@ -63,6 +63,8 @@ void	ft_putnbr(long n)
  * main - function
  * @argc: int
  * @argv: char ptr ptr
+ *
+ * Return: int
  */
 int	main(int argc, char **argv)
 {
