@@ -123,8 +123,8 @@ int	main(int argc, char **argv)
 				r++;
 			}
 			r += v;
+			ft_putnbr((long) r);
 		}
-		ft_putnbr((long) r);
 	}
 	_putchar('\n');
 	return (0);
