@@ -27,14 +27,17 @@ int     _atoi(char *s)
 
 /**
  * error - function
+ *
+ * Return: int
  */
-void	error(void)
+int	error(void)
 {
 	_putchar('E');
 	_putchar('r');
 	_putchar('r');
 	_putchar('o');
 	_putchar('r');
+	return (1);
 }
 
 /**
@@ -88,23 +91,15 @@ int	main(int argc, char **argv)
 {
 	int	x;
 	int	v;
+	int	f;
 
-	if (argc < 2)
+	v = 0;
+	f = 0;
+	for (x = 1; x < argc; x++)
+		if (!check_digits(argv[x]))
+			f = error();
+	if (f == 0)
 	{
-		error();
-	}
-	else
-	{
-		for (x = 1; x < argc; x++)
-		{
-			if (!check_digits(argv[x]))
-			{
-				error();
-				_putchar('\n');
-				return (0);
-			}
-		}
-		v = 0;
 		for (x = 1; x < argc; x++)
 			v += _atoi(argv[x]);
 		ft_putnbr((long) v);
