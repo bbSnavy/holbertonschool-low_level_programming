@@ -93,34 +93,37 @@ int	main(int argc, char **argv)
 	int	v;
 
 	if (argc != 2)
-	{
 		error();
-	}
 	else
 	{
 		r = 0;
 		v = _atoi(argv[1]);
-		while (v >= 25)
+		if (v < 0)
+			ft_putnbr(0);
+		else
 		{
-			v -= 25;
-			r++;
+			while (v >= 25)
+			{
+				v -= 25;
+				r++;
+			}
+			while (v >= 10)
+			{
+				v -= 10;
+				r++;
+			}
+			while (v >= 5)
+			{
+				v -= 5;
+				r++;
+			}
+			while (v >= 2)
+			{
+				v -= 2;
+				r++;
+			}
+			r += v;
 		}
-		while (v >= 10)
-		{
-			v -= 10;
-			r++;
-		}
-		while (v >= 5)
-		{
-			v -= 5;
-			r++;
-		}
-		while (v >= 2)
-		{
-			v -= 2;
-			r++;
-		}
-		r += v;
 		ft_putnbr((long) r);
 	}
 	_putchar('\n');
