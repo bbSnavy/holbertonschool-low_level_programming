@@ -2,6 +2,28 @@
 #include <stdlib.h>
 
 /**
+ * _strdup - function
+ * @s: char ptr
+ *
+ * Return: char ptr
+ */
+char	*_strdup(char *s)
+{
+	char	*r;
+	int	x;
+
+	for (x = 0; s[x]; x++)
+		;
+	r = (char *) malloc(sizeof(char) * (x + 1));
+	if (r == 0)
+		return (0);
+	for (x = 0; s[x]; x++)
+		r[x] = s[x];
+	r[x] = '\0';
+	return (r);
+}
+
+/**
  * strtow_eval - function
  * @s: char ptr
  * @r: char ptr ptr
