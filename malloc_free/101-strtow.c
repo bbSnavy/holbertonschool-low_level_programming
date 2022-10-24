@@ -2,13 +2,13 @@
 #include <stdlib.h>
 
 /**
- * _strdup - function
+ * _strndup - function
  * @s: char ptr
  * @l: int
  *
  * Return: char ptr
  */
-char	*_strdup(char *s, int l)
+char	*_strndup(char *s, int l)
 {
 	char	*r;
 	int	x;
@@ -45,7 +45,7 @@ int	strtow_eval(char *s, char **r)
 			{
 				if (r != 0)
 				{
-					r[v] = _strdup(s + x, m);
+					r[v] = _strndup(s + x, m);
 					if (r[v] == 0)
 					{
 						for (y = 0; y < v; y++)
