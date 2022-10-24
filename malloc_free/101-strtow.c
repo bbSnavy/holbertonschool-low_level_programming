@@ -72,7 +72,6 @@ int	strtow_eval(char *s, char **r)
 char	**strtow(char *str)
 {
 	char	**r;
-	int	x;
 
 	if (str == 0)
 		return (0);
