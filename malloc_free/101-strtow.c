@@ -45,7 +45,7 @@ int	strtow_eval(char *s, char **r)
 			{
 				if (r != 0)
 				{
-					r[v] = _strndup(s + x, m);
+					r[v] = _strndup(s + x - m, m);
 					if (r[v] == 0)
 					{
 						for (y = 0; y < v; y++)
@@ -60,7 +60,13 @@ int	strtow_eval(char *s, char **r)
 		}
 		else
 			m++;
-	return (v);
+	if (r != 0)
+	{
+		if (m > 0)
+			r[v++] = _strndup(s + x - m, m);
+		r[v] = 0;
+	}
+	return (v + (m > 0) + 1);
 }
 
 /**
