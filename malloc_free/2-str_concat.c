@@ -37,7 +37,13 @@ char	*str_concat(char *s1, char *s2)
 	int	x;
 
 	if (s1 == 0 && s2 == 0)
-		return (0);
+	{
+		r = (char *) malloc(sizeof(char) * 1);
+		if (r == 0)
+			return (0);
+		r[0] = '\0';
+		return (r);
+	}
 	if (s1 == 0)
 		return (_strdup(s2));
 	if (s2 == 0)
