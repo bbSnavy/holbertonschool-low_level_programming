@@ -4,20 +4,19 @@
 /**
  * _strdup - function
  * @s: char ptr
+ * @l: int
  *
  * Return: char ptr
  */
-char	*_strdup(char *s)
+char	*_strdup(char *s, int l)
 {
 	char	*r;
 	int	x;
 
-	for (x = 0; s[x]; x++)
-		;
-	r = (char *) malloc(sizeof(char) * (x + 1));
+	r = (char *) malloc(sizeof(char) * (l + 1));
 	if (r == 0)
 		return (0);
-	for (x = 0; s[x]; x++)
+	for (x = 0; x < l; x++)
 		r[x] = s[x];
 	r[x] = '\0';
 	return (r);
