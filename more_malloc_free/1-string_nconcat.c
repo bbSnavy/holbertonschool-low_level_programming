@@ -28,17 +28,17 @@ char	*string_nconcat(char *s1, char *s2, unsigned int n)
 		r = (char *) malloc(sizeof(char) * (lx + ly + 1));
 	if (r == 0)
 		return (0);
-	l = 0;
+	lx = 0;
 	if (s1 != 0)
 		for (x = 0; s1[x]; x++)
-			r[l++] = s1[x];
+			r[lx++] = s1[x];
 	if (s2 != 0)
 	{
 		for (x = 0; s2[x] && x < n; x++)
-			r[l++] = s2[x];
+			r[lx++] = s2[x];
 		for (; x < n; x++)
-			r[l++] = '\0';
+			r[lx++] = '\0';
 	}
-	r[l] = '\0';
+	r[lx] = '\0';
 	return (r);
 }
