@@ -1,6 +1,13 @@
 #include "main.h"
 #include <stdlib.h>
 
+/**
+ * _calloc - function
+ * @nmemb: unsigned int
+ * @size: unsigned int
+ *
+ * Return: int
+ */
 void	*_calloc(unsigned int nmemb, unsigned int size)
 {
 	void		*r;
