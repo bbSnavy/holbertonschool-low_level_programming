@@ -10,8 +10,8 @@
  */
 void	*_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
-	void	*res;
-	int	x;
+	void		*res;
+	unsigned int	x;
 
 	if (ptr && new_size == 0)
 	{
@@ -26,7 +26,7 @@ void	*_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		if (res == 0)
 			return (0);
 		for (x = 0; x < old_size; x++)
-			((char *) res)[x] = ((char *) old)[x];
+			((char *) res)[x] = ((char *) ptr)[x];
 		return (res);
 	}
 	res = malloc(new_size);
