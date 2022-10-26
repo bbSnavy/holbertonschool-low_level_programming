@@ -7,6 +7,7 @@
  * @max: int
  *
  * Return: int
+ */
 int	*array_range(int min, int max)
 {
 	int	*r;
