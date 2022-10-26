@@ -7,6 +7,7 @@
  * @old_size: unsigned int
  * @new_size: unsigned int
  *
+ * Return: void ptr
  */
 void	*_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
@@ -27,6 +28,7 @@ void	*_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 			return (0);
 		for (x = 0; x < old_size; x++)
 			((char *) res)[x] = ((char *) ptr)[x];
+		free(ptr);
 		return (res);
 	}
 	res = malloc(new_size);
