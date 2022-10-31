@@ -1,4 +1,4 @@
-#include "main.h"
+#include "dog.h"
 
 /**
  * ft_strdup - function
