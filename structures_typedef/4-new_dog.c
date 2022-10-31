@@ -50,11 +50,6 @@ dog_t	*new_dog(char *name, float age, char *owner)
 	vo = ft_strdup(owner);
 	if (vo == 0)
 		return (0);
-	*r = (dog_t)
-	{
-		.name = vn,
-		.age = age,
-		.owner = vo,
-	};
+	*r = (dog_t) {vn, age, vo};
 	return (r);
 }
