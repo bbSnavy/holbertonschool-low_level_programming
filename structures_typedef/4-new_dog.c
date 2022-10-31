@@ -34,6 +34,7 @@ char	*ft_strdup(char *str)
 dog_t	*new_dog(char *name, float age, char *owner)
 {
 	dog_t	*r;
+	dog_t	d;
 	char	*vn;
 	char	*vo;
 
@@ -50,6 +51,7 @@ dog_t	*new_dog(char *name, float age, char *owner)
 	vo = ft_strdup(owner);
 	if (vo == 0)
 		return (0);
-	*r = (dog_t) {vn, age, vo};
+	d = (dog_t) {vn, age, vo};
+	*r = d;
 	return (r);
 }
