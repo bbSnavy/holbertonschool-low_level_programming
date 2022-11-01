@@ -1,5 +1,10 @@
 #include "variadic_functions.h"
 
+/**
+ * print_strings - function
+ * @separator: const char ptr
+ * @n: const unsigned int
+ */
 void	print_strings(const char *separator, const unsigned int n, ...)
 {
 	va_list		l;
