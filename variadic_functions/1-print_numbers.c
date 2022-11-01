@@ -17,7 +17,7 @@ void	print_numbers(const char *separator, const unsigned int n, ...)
 	for (x = 0; x < n; x++)
 	{
 		v = va_arg(l, int);
-		printf(&"%u%s\0%u\b"[3 * (x == (n - 1))], v, separator, v);
+		printf(&"%u%s\0%u\n"[3 * (x == (n - 1))], v, separator, v);
 	}
 	va_end(l);
 }
