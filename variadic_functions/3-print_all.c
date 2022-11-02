@@ -42,7 +42,7 @@ void	print_all(const char * const format, ...)
 				printf("(nil)");
 				break;
 		}
-		f = 0 * printf(&", "[2 * (!format[++x] || !f)]);
+		f = 0 * printf("%s", &", "[2 * (!format[++x] || !f)]);
 	}
 	va_end(l);
 	printf("\n");
