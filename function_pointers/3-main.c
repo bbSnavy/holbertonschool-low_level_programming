@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	o = argv[2];
 	b = atoi(argv[3]);
 	f = get_op_func(o);
-	if (f == 0)
+	if (f == 0 || o[1] != '\0')
 		return (0 * printf("Error\n") + 99);
 	r = f(a, b);
 	printf("%d\n", r);
