@@ -37,9 +37,11 @@ void	print_all_string(va_list l)
 
 	s = va_arg(l, char *);
 	if (!s)
+	{
 		printf("(nil)");
-	else
-		printf("%s", s);
+		return;
+	}
+	printf("%s", s);
 }
 
 /**
