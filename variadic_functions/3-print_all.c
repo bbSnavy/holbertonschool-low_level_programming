@@ -53,7 +53,7 @@ void	print_all(const char * const format, ...)
 		{'i', print_all_int},
 		{'f', print_all_float},
 		{'s', print_all_string},
-		NULL,
+		{0, 0},
 	};
 	va_list		l;
 	int		x;
@@ -66,7 +66,7 @@ void	print_all(const char * const format, ...)
 	while (format[x])
 	{
 		y = 0;
-		while (ops[y])
+		while (ops[y].op)
 		{
 			if (ops[y].op == format[x])
 				ops[y].fn(l);
