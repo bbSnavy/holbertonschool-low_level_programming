@@ -1,48 +1,78 @@
 #include "variadic_functions.h"
 
 /**
+ * print_all_char - function
+ * @l: va_list
+ */
+void	print_all_char(va_list l)
+{
+	printf("%c", va_arg(l, int));
+}
+
+/**
+ * print_all_int - function
+ * @l: va_list
+ */
+void	print_all_int(va_list l)
+{
+	printf("%d", va_arg(l, int));
+}
+
+/**
+ * print_all_float - function
+ * @l: va_list
+ */
+void	print_all_float(va_list l)
+{
+	printf("%f", va_arg(l, double));
+}
+
+/**
+ * print_all_string - function
+ * @l: va_list
+ */
+void	print_all_string(va_list l)
+{
+	char	*s;
+
+	s = va_arg(l, char *);
+	if (!s)
+		printf("(nil)");
+	else
+		printf("%s", s);
+}
+
+/**
  * print_all - function
  * @format: const char ptr const
  */
 void	print_all(const char * const format, ...)
 {
+	operation_t	ops[] = {
+		{'c', print_all_char},
+		{'i', print_all_int},
+		{'f', print_all_float},
+		{'s', print_all_string},
+		NULL,
+	};
 	va_list		l;
-	unsigned int	x;
-	int		f;
-	char		*s;
+	int		x;
+	int		y;
 
 	if (!format)
-	{
-		printf("\n");
-		return;
-	}
+		return ((void) printf("\n"));
 	va_start(l, format);
 	x = 0;
-	f = 0;
 	while (format[x])
 	{
-		switch (format[x])
+		y = 0;
+		while (ops[y])
 		{
-			case 'c':
-				f = 1 + 0 * printf("%c", va_arg(l, int));
-				break;
-			case 'i':
-				f = 1 + 0 * printf("%d", va_arg(l, int));
-				break;
-			case 'f':
-				f = 1 + 0 * printf("%f", va_arg(l, double));
-				break;
-			case 's':
-				s = va_arg(l, char *);
-				if (s)
-				{
-					f = 1 + 0 * printf("%s", s);
-					break;
-				}
-				f = 1 + 0 * printf("(nil)");
-				break;
+			if (ops[y].op == format[x])
+				ops[y].fn(l);
+			y++;
 		}
-		f = 0 * printf("%s", &", "[2 * (!format[++x] || !f)]);
+		x++;
 	}
 	va_end(l);
 	printf("\n");
