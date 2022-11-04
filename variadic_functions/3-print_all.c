@@ -69,10 +69,14 @@ void	print_all(const char * const format, ...)
 		while (ops[y].op)
 		{
 			if (ops[y].op == format[x])
+			{
 				ops[y].fn(l);
+				break;
+			}
 			y++;
 		}
-		printf("%s", &"\0, "[(y < 4) && (!format[++x])]);
+		printf("%s", &"\0, "[format[x + 1] && (y < 4)]);
+		x++;
 	}
 	va_end(l);
 	printf("\n");
