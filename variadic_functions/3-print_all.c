@@ -60,7 +60,10 @@ void	print_all(const char * const format, ...)
 	int		y;
 
 	if (!format)
-		return ((void) printf("\n"));
+	{
+		printf("\n");
+		return;
+	}
 	va_start(l, format);
 	x = 0;
 	while (format[x])
