@@ -72,7 +72,7 @@ void	print_all(const char * const format, ...)
 				ops[y].fn(l);
 			y++;
 		}
-		x++;
+		printf(&"\0, "[(y < 4) && (!format[++x])]);
 	}
 	va_end(l);
 	printf("\n");
