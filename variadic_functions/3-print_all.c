@@ -36,7 +36,7 @@ void	print_all_string(va_list l)
 	char	*s;
 
 	s = va_arg(l, char *);
-	printf("%s\0(nil)" + (s == 0) * 3, s);
+	printf(&"%s\0(nil)"[(s == 0) * 3], s);
 }
 
 /**
