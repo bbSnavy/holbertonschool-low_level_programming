@@ -2,14 +2,14 @@
 
 /**
  * new_node - function
- * @str: const char ptr
+ * @n: const int
  *
  * Return: list_t ptr
  */
 listint_t	*new_node(const int n)
 {
 	listint_t	*r;
-	
+
 	r = (listint_t *) malloc(sizeof(listint_t));
 	if (!r)
 		return (0);
@@ -18,6 +18,13 @@ listint_t	*new_node(const int n)
 	return (r);
 }
 
+/**
+ * add_nodeint - function
+ * @head: listint_t ptr ptr
+ * @n: const int
+ *
+ * Return: listint_t ptr
+*/
 listint_t	*add_nodeint(listint_t **head, const int n)
 {
 	listint_t	*r;
