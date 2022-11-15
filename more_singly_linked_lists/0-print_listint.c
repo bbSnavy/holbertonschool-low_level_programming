@@ -9,7 +9,6 @@
 size_t	print_listint(const listint_t *h)
 {
 	size_t	r;
-	char	*s;
 
 	r = 0;
 	if (!h)
