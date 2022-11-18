@@ -112,14 +112,19 @@ size_t	free_listint_safe(listint_t **h)
 	if (!h)
 		return (0);
 	p = 0;
-	r = 0;
-	for (a = *h; a != 0; a = a->next)
+	a = *h;
+	if (a == 0)
+	{
+		*h = 0;
+		return (0);
+	}
+	for (r = 0; a != 0; r++)
 	{
 		if (listptr_get_free(&p, a) == 1)
 			break;
 		if (listptr_add_free(&p, a) == 0)
 			break;
-		r++;
+		a = a->next;
 	}
 	listptr_apply_free(&p);
 	listptr_free_free(&p);
