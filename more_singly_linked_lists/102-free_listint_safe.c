@@ -108,17 +108,18 @@ size_t	free_listint_safe(listint_t **h)
 	size_t		r;
 	listptr_t	*p;
 	listint_t	*a;
-	listint_t	*b;
 
 	if (!h)
 		return (0);
 	p = 0;
+	r = 0;
 	for (a = *h; a != 0; a = a->next)
 	{
 		if (listptr_get(&p, a) == 1)
 			break;
 		if (listptr_add(&p, a) == 0)
 			break;
+		r++;
 	}
 	listptr_apply_free(&p);
 	listptr_free(&p);
