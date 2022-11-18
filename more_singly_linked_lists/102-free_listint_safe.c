@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * listptr_free - function
+ * listptr_free_free - function
  * @h: listptr_t ptr ptr
  */
 void	listptr_free_free(listptr_t **h)
