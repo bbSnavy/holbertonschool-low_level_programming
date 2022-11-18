@@ -8,23 +8,21 @@
 */
 listint_t	*reverse_listint(listint_t **head)
 {
-	context_t	ctx;
+	listint_t	*a;
+	listint_t	*b;
 
-	if (!head)
+	if (head == 0 || *head == 0)
 		return (0);
-	ctx.r = *head;
-	if (!ctx.r)
-		return (0);
-	ctx.p = 0;
-	ctx.c = ctx.r;
-	ctx.n = 0;
-	while (ctx.c)
+	a = 0;
+	b = 0;
+	while (*head)
 	{
-		ctx.n = ctx.c->next;
-		ctx.c->next = ctx.p;
-		ctx.p = ctx.c;
-		ctx.c = ctx.n;
+		a = (*head)->next;
+		(*head)->next = b;
+		b = *head;
+		*head = a;
 	}
-	*head = ctx.p;
-	return (ctx.r);
+	*head = b;
+	return (*head);
 }
+
