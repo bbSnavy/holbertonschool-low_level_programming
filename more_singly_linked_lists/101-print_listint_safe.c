@@ -102,7 +102,7 @@ size_t	print_listint_safe(const listint_t *head)
 	{
 		if (listptr_get(&p, a))
 		{
-			printf("-> [%p] %d\n", a->n);
+			printf("-> %d\n", a->n);
 			break;
 		}
 		printf("[%p] %d\n", (void *) a, a->n);
