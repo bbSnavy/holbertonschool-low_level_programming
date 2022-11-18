@@ -123,5 +123,5 @@ size_t	free_listint_safe(listint_t **h)
 	listptr_apply_free(&p);
 	listptr_free(&p);
 	*h = 0;
-	return (*h);
+	return (r);
 }
