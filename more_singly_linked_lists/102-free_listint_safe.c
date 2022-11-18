@@ -4,7 +4,7 @@
  * listptr_free - function
  * @h: listptr_t ptr ptr
  */
-void	listptr_free(listptr_t **h)
+void	listptr_free_free(listptr_t **h)
 {
 	listptr_t	*a;
 	listptr_t	*b;
@@ -24,13 +24,13 @@ void	listptr_free(listptr_t **h)
 }
 
 /**
- * listptr_add - function
+ * listptr_add_free - function
  * @h: listptr_t ptr ptr
  * @v: void ptr
  *
  * Return: listptr_t ptr
 */
-listptr_t	*listptr_add(listptr_t **h, void *v)
+listptr_t	*listptr_add_free(listptr_t **h, void *v)
 {
 	listptr_t	*n;
 	listptr_t	*p;
@@ -73,13 +73,13 @@ void	listptr_apply_free(listptr_t **h)
 }
 
 /**
- * listptr_get - function
+ * listptr_get_free - function
  * @h: listptr_t ptr ptr
  * @v: void ptr
  *
  * Return: int
 */
-int	listptr_get(listptr_t **h, void *v)
+int	listptr_get_free(listptr_t **h, void *v)
 {
 	listptr_t	*p;
 
@@ -115,14 +115,14 @@ size_t	free_listint_safe(listint_t **h)
 	r = 0;
 	for (a = *h; a != 0; a = a->next)
 	{
-		if (listptr_get(&p, a) == 1)
+		if (listptr_get_free(&p, a) == 1)
 			break;
-		if (listptr_add(&p, a) == 0)
+		if (listptr_add_free(&p, a) == 0)
 			break;
 		r++;
 	}
 	listptr_apply_free(&p);
-	listptr_free(&p);
+	listptr_free_free(&p);
 	*h = 0;
 	return (r);
 }
