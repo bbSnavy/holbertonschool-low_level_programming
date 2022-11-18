@@ -39,7 +39,7 @@ listptr_t	*listptr_add(listptr_t **h, void *v)
 		return (0);
 	n = (listptr_t *) malloc(sizeof(listptr_t));
 	if (n == 0)
-		return (0);
+		exit(98);
 	n->n = 0;
 	n->v = v;
 	p = *h;
@@ -93,7 +93,7 @@ size_t	print_listint_safe(const listint_t *head)
 
 	if (!head)
 	{
-		printf("[0] [0]\n");
+		printf("0\n");
 		exit(98);
 	}
 	p = 0;
@@ -103,7 +103,7 @@ size_t	print_listint_safe(const listint_t *head)
 		if (listptr_get(&p, a))
 		{
 			listptr_free(&p);
-			exit(98);
+			break;
 		}
 		printf("[%p] %d\n", (void *) a, a->n);
 		if (listptr_add(&p, a) == 0)
