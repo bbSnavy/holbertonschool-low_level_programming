@@ -15,7 +15,7 @@ int	create_file(const char *filename, char *text_content)
 
 	if (filename == 0)
 		return (-1);
-	f = open(filename, O_TRUNC | O_WRONLY, 384);
+	f = open(filename, O_TRUNC | O_CREAT | O_WRONLY, 384);
 	if (f < 0)
 		return (-1);
 	for (x = 0; text_content && text_content[x]; x++)
