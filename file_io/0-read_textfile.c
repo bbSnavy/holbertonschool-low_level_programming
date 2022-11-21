@@ -1,0 +1,32 @@
+#include "main.h"
+
+/**
+* read_textfile - function
+* @filename: const char ptr
+* @letters: size_t
+*
+* Return: ssize_t
+*/
+ssize_t read_textfile(const char *filename, size_t letters)
+{
+	ssize_t	r;
+	int	f;
+	char	b[1024];
+	int	l;
+
+	if (filename == 0)
+		return (0);
+	f = open(filename, O_RDONLY);
+	if (f < 0)
+		return (0);
+	while (1)
+	{
+		l = read(f, b, 1024);
+		if (l == -1 || l <= 0)
+			break;
+		r += (ssize_t) write(1, b, l);
+	}
+	close(f);
+	return (r);
+}
+
