@@ -1,6 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 
+/**
+ * cp_runtime - function
+ * @fpsrc: char ptr
+ * @fpdst: char ptr
+ */
 void	cp_runtime(char *fpsrc, char *fpdst)
 {
 	int	fdsrc;
@@ -30,8 +35,21 @@ void	cp_runtime(char *fpsrc, char *fpdst)
 			exit(99 + 0 * close(fdsrc) * dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", fpdst));
 	}
+	if (close(fdsrc) == -1)
+		exit(100 + 0 * close(fddst) * dprintf(STDERR_FILENO,
+			"Error: Can't close fd %d\n", fdsrc));
+	if (close(fddst) == -1)
+		exit(100 + 0 * dprintf(STDERR_FILENO,
+			"Error: Can't close fd %d\n", fddst));
 }
 
+/**
+ * main - function
+ * @argc: int
+ * @argv: char ptr ptr
+ *
+ * Return: int
+ */
 int	main(int argc, char **argv)
 {
 	if (argc != 3)
