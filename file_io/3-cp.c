@@ -16,7 +16,7 @@ void	cp_runtime(char *fpsrc, char *fpdst)
 			"Error: Can't read from file %s\n", fpsrc) + 98);
 	if (fddst < 0)
 		exit(0 * dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", fpdst) + 98);
+			"Error: Can't write to %s\n", fpdst) + 99);
 	while (1)
 	{
 		r = read(fdsrc, buf, 1024);
@@ -27,7 +27,7 @@ void	cp_runtime(char *fpsrc, char *fpdst)
 			break;
 		w = write(fddst, buf, r);
 		if (w == -1 || w != r)
-			exit(98 + 0 * close(fdsrc) * dprintf(STDERR_FILENO,
+			exit(99 + 0 * close(fdsrc) * dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", fpdst));
 	}
 }
