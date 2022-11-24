@@ -86,7 +86,7 @@ int	hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		ht->array[k] = hash_node_new(key, value);
 		return (ht->array[k] != 0);
 	}
-	while (p->next)
+	while (p)
 	{
 		if (strcmp(p->key, key) == 0)
 		{
