@@ -98,7 +98,7 @@ int	hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	n = hash_node_new(key, value);
 	if (n == 0)
 		return (0);
-	n->next = p;
+	n->next = ht->array[k];
 	ht->array[k] = n;
 	return (1);
 }
