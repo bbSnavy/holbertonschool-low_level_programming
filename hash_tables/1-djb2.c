@@ -12,7 +12,7 @@ unsigned long int	hash_djb2(const unsigned char *str)
 	size_t			x;
 
 	r = 5381;
-	for (x = 0; str[x]; x++)
+	for (x = 0; str && str[x]; x++)
 		r = ((r << 5) + r) + str[x];
 	return (r);
 }
