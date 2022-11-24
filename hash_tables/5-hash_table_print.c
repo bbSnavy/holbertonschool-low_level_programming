@@ -19,11 +19,11 @@ void	hash_table_print(const hash_table_t *ht)
 		for (p = ht->array[x]; p; p = p->next)
 		{
 			printf("'%s': '%s'", p->key, p->value);
-			if (p->next)
-				printf(",");
+			if (p->next && x < (ht->size - 1))
+				printf(", ");
 		}
 		if (ht->array[x] && x < (ht->size - 1))
-			printf(",");
+			printf(", ");
 	}
 	printf("}");
 	printf("\n");
