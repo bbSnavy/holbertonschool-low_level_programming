@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_printf - function
+ * hash_table_print - function
  * @ht: const hash_table_t ptr
 */
 void	hash_table_print(const hash_table_t *ht)
@@ -22,7 +22,7 @@ void	hash_table_print(const hash_table_t *ht)
 			if (p->next)
 				printf(",");
 		}
-		if (x < (ht->size - 1))
+		if (p && x < (ht->size - 1))
 			printf(",");
 	}
 	printf("}");
