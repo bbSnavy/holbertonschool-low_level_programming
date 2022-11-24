@@ -68,7 +68,6 @@ hash_node_t	*hash_node_new(const char *key, const char *val)
 int	hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t	*p;
-	hash_node_t	*n;
 
 	if (ht == 0)
 		return (0);
@@ -76,7 +75,7 @@ int	hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (ht->array == 0 || ht->size < 1)
 		return (0);
-	p = ht->array[key_index(key, ht->size)];
+	p = ht->array[key_index((const unsigned char *) key, ht->size)];
 	if (p == 0)
 	{
 		ht->array[0] = hash_node_new(key, value);
