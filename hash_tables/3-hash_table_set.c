@@ -64,6 +64,8 @@ hash_node_t	*hash_node_new(const char *key, const char *val)
  * @ht: hash_table_t ptr
  * @key: const char ptr
  * @value: const char ptr
+ *
+ * Return: int
 */
 int	hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
@@ -83,7 +85,7 @@ int	hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 	while (p->next)
 	{
-		if (strcmp(p->key, key))
+		if (strcmp(p->key, key) == 0)
 		{
 			p->value = _strdup(value);
 			return (p->value != 0);
