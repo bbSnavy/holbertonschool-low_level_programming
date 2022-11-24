@@ -33,6 +33,8 @@ dlistint_t	*add_dnodeint_end(dlistint_t **head, const int n)
 		return (0);
 	r = add_dnodeint_end_new(n);
 	p = *head;
+	if (r == 0)
+		return (0);
 	if (p == 0)
 		*head = r;
 	else
