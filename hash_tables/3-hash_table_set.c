@@ -90,6 +90,8 @@ int	hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(p->key, key) == 0)
 		{
+			if (p->value)
+				free(p->value);
 			p->value = _strdup(value);
 			return (p->value != 0);
 		}
