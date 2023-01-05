@@ -40,7 +40,7 @@ int	binary_search_runtime(int *a, size_t l, size_t r, int v)
 		return (-1);
 	if (r < l)
 		return (-1);
-	binary_search_print(a + l, r - l);
+	binary_search_print(a + l, r - l + 1);
 	m = l + (r - l) / 2;
 	if (a[m] == v)
 		return (m);
