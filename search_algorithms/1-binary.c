@@ -16,7 +16,7 @@ void	binary_search_print(int *array, size_t size)
 	printf("Searching in array: ");
 	for (x = 0; x < size; x++)
 	{
-		printf("[%d]", array[x]);
+		printf("%d", array[x]);
 		if ((x + 1) < size)
 			printf(",");
 	}
