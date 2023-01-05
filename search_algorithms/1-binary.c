@@ -59,8 +59,6 @@ int	binary_search_runtime(int *a, size_t l, size_t r, int v)
 */
 int	binary_search(int *array, size_t size, int value)
 {
-	size_t	x;
-
 	if (array == 0)
 		return (-1);
 	if (size < 1)
